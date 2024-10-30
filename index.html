@@ -8,23 +8,363 @@
   </head>
   <body>
     <!-- cipeng -->
-    <nav></nav>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-toggle" id="navbar-toggle">☰</div>
+        <a href="#sygmental" class="navbar-link"
+          ><strong>SayangMental</strong></a
+        >
+        <!-- Pindahkan tautan SygMental ke sini -->
+        <ul class="navbar-menu" id="navbar-menu">
+          <li><a href="#about" class="navbar-link">Tentang</a></li>
+          <li><a href="#services" class="navbar-link">Pelayanan</a></li>
+          <li><a href="#contact" class="navbar-link">Kontak</a></li>
+          <li><a href="#login" class="navbar-button">Login</a></li>
+        </ul>
+      </div>
+    </nav>
 
-    <section class="hero"></section>
+    <!-- Hero Section with Video -->
+    <section class="hero-section">
+      <div class="hero-container">
+        <div class="video-wrapper">
+          <video class="responsive-video" autoplay loop muted>
+            <source
+              src="assets\5713278-uhd_3840_2160_25fps.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
+    </section>
 
-    <section class="features"></section>
+    <!-- Content Section -->
+    <section class="section light-green-bg fade-in">
+      <div class="container">
+        <div class="grid-layout">
+          <div class="grid-block">
+            <div class="eyebrow">Kami akan menemani tiap langkahmu</div>
+            <h2 class="heading">
+              Terapi yang disusun khusus
+              <span class="thin-underline">sesuai denganmu</span>
+            </h2>
+            <p class="description">
+              Kami paham dengan kebetuhan serta dukungan dari dalam dirimu.
+            </p>
+            <a href="#" class="button-primary">Buat konsultasi</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <section class="testimonies"></section>
+    <!-- Features Section -->
+    <section class="features-section fade-in">
+      <div class="features-container">
+        <div class="features-grid">
+          <div class="feature-item active">
+            <h2 class="features-heading">Mengapa Memilih Kami?</h2>
+            <img src="assets/terapi yang terjangkau.jpg" alt="Feature 1" />
+            <h3>Terapi yang Terjangkau</h3>
+            <p>
+              Kami menyediakan layanan terapi dengan biaya yang sesuai kebutuhan
+              Anda.
+            </p>
+          </div>
+          <div class="feature-item">
+            <img src="assets/ahli berlisensi.jpg" alt="Feature 2" />
+            <h3>Ahli berlisensi</h3>
+            <p>
+              Konselor dan psikolog kami memiliki lisensi resmi dan
+              berpengalaman tinggi.
+            </p>
+          </div>
+          <div class="feature-item">
+            <img src="assets/waktu fleksibel.jpg" alt="Feature 3" />
+            <h3>Waktu yang fleksibel</h3>
+            <p>
+              Sesi konsultasi yang fleksibel menyesuaikan waktu yang paling
+              nyaman bagi Anda.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let currentFeatureIndex = 0;
+        const featureItems = document.querySelectorAll(".feature-item");
+
+        function rotateFeatures() {
+          // Remove 'active' class from current feature
+          featureItems[currentFeatureIndex].classList.remove("active");
+
+          // Move to the next feature, or loop back to 0
+          currentFeatureIndex = (currentFeatureIndex + 1) % featureItems.length;
+
+          // Add 'active' class to the next feature
+          featureItems[currentFeatureIndex].classList.add("active");
+        }
+
+        // Set an interval to rotate features every 10 seconds
+        setInterval(rotateFeatures, 10000);
+      });
+    </script>
+
+    <!-- Testimonies Section -->
+    <section class="testimonies-section fade-in">
+      <div class="testimonies-container">
+        <h2 class="testimonies-heading">Apa Kata Mereka?</h2>
+        <div class="testimonies-grid">
+          <div class="testimony-item">
+            <p class="testimony-quote">
+              "SygMental membantu saya menemukan ketenangan dan kedamaian di
+              saat terberat."
+            </p>
+            <p class="testimony-name">- Indah S.</p>
+          </div>
+          <div class="testimony-item">
+            <p class="testimony-quote">
+              "Konselor yang profesional dan sangat memahami kebutuhan saya."
+            </p>
+            <p class="testimony-name">- Rizky T.</p>
+          </div>
+          <div class="testimony-item">
+            <p class="testimony-quote">
+              "Sangat merekomendasikan untuk semua yang mencari dukungan
+              mental."
+            </p>
+            <p class="testimony-name">- Rina M.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Toggle Navbar
+      const toggleButton = document.getElementById("navbar-toggle");
+      const navbarMenu = document.getElementById("navbar-menu");
+
+      toggleButton.addEventListener("click", () => {
+        navbarMenu.classList.toggle("active");
+      });
+
+      // Fade-in Animation on Scroll
+      const fadeInSections = document.querySelectorAll(".fade-in");
+
+      window.addEventListener("scroll", () => {
+        fadeInSections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (sectionTop < windowHeight - 50) {
+            section.classList.add("visible");
+          }
+        });
+      });
+    </script>
     <!-- sampe sini cipeng -->
 
     <!-- avriel -->
-    <section class="articles"></section>
+    <section class="articles">
+      <!--header-->
+      <h1 class="header">Artikel</h1>
+      <p>Pantau terus informasi terbaru dari blog kami</p>
+      <div class="box">
+        <img
+          src="data:image/jpeg;base64,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"
+          class="img"
+        />
+        <h3 class="header">Contoh-contoh masalah pada kesehatan mental</h3>
+        <p>
+          Gangguan kesehatan mental bisa dibilang cukup beragam, dimulai dari
+          Bipolar, ADHD, Anxiety dan lain sebagainya.
+        </p>
+        <a href="link">Read more</a>
+      </div>
+      <div class="box">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpfX7JlVqRdgWBvAZ-9ITG2QpavQQpXG3nwA&s"
+          class="img"
+        />
+        <h3 class="header">Penyebab masalah kesehatan mental</h3>
+        <p>
+          Ada beberapa faktor yang menyebabkan meningkatnya masalah kesehatan
+          mental di Indonesia. Penyebabnya sering kali bersifat kompleks dan
+          saling berkaitan.
+        </p>
+        <a href="link">Read more</a>
+      </div>
+      <div class="box">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ77SDS23Wvnn2vjn97L3WNIRffXkm0CImLDw&s"
+          class="img"
+        />
+        <h3 class="header">Cara mencegah masalah pada kesehatan mental</h3>
+        <p>
+          Menjaga kesehatan mental dan mencegah gangguan mental memerlukan
+          pendekatan yang holistik, mencakup langkah-langkah yang dapat
+          diterapkan secara individu maupun dalam lingkup sosial.
+        </p>
+        <a href="link">Read more</a>
+      </div>
+    </section>
 
-    <section class="faq"></section>
+    <section class="faq-section">
+      <h2 class="title">FAQs</h2>
 
-    <section class="call-to-action"></section>
+      <div class="faqq">
+        <div class="question">
+          <h3>Bagaimana cara kerja layanan konsultasi online ini?</h3>
 
-    <footer></footer>
+          <svg width="15" height="10" viewBox="0 0 42 25">
+            <path
+              d="M3 3L21 21L39 3"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <div class="answer">
+          <p>
+            Layanan kami menghubungkan Anda dengan psikolog berlisensi di
+            seluruh Indonesia melalui konsultasi online yang aman. Anda hanya
+            perlu menelusuri daftar profesional yang tersedia, memilih yang
+            sesuai dengan kebutuhan Anda, dan menjadwalkan sesi pada waktu yang
+            nyaman. Konsultasi dilakukan melalui video atau chat yang aman,
+            memastikan kerahasiaan dan kenyamanan Anda.
+          </p>
+        </div>
+      </div>
+
+      <div class="faqq">
+        <div class="question">
+          <h3>
+            Apakah percakapan saya dengan psikolog bersifat pribadi dan aman?
+          </h3>
+
+          <svg width="15" height="10" viewBox="0 0 42 25">
+            <path
+              d="M3 3L21 21L39 3"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <div class="answer">
+          <p>
+            Tentu saja. Kami sangat memprioritaskan privasi Anda dan memiliki
+            langkah-langkah keamanan yang ketat untuk menjaga kerahasiaan setiap
+            percakapan. Platform kami menggunakan saluran komunikasi terenkripsi
+            agar informasi Anda tetap aman dan hanya dapat diakses oleh Anda dan
+            psikolog yang Anda pilih.
+          </p>
+        </div>
+      </div>
+
+      <div class="faqq">
+        <div class="question">
+          <h3>Masalah kesehatan mental apa saja yang bisa dibahas di sini?</h3>
+
+          <svg width="15" height="10" viewBox="0 0 42 25">
+            <path
+              d="M3 3L21 21L39 3"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <div class="answer">
+          <p>
+            Anda dapat berkonsultasi dengan psikolog kami mengenai berbagai
+            masalah kesehatan mental, termasuk stres, kecemasan, depresi,
+            masalah hubungan, harga diri, tantangan pekerjaan, dan lainnya. Para
+            ahli kami siap memberikan panduan yang sesuai dengan kebutuhan Anda.
+          </p>
+        </div>
+      </div>
+
+      <div class="faqq">
+        <div class="question">
+          <h3>
+            Apakah saya memerlukan perangkat lunak atau perangkat khusus untuk
+            menggunakan layanan ini?
+          </h3>
+
+          <svg width="15" height="10" viewBox="0 0 42 25">
+            <path
+              d="M3 3L21 21L39 3"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <div class="answer">
+          <p>
+            Tidak ada perangkat lunak khusus yang diperlukan! Anda hanya
+            memerlukan perangkat (komputer, tablet, atau smartphone) dengan
+            koneksi internet. Platform kami dirancang agar dapat diakses melalui
+            sebagian besar browser web modern, sehingga Anda bisa terhubung di
+            mana pun Anda berada.
+          </p>
+        </div>
+      </div>
+
+      <div class="faqq">
+        <div class="question">
+          <h3>Bagaimana cara memilih psikolog yang tepat untuk saya?</h3>
+
+          <svg width="15" height="10" viewBox="0 0 42 25">
+            <path
+              d="M3 3L21 21L39 3"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <div class="answer">
+          <p>
+            Platform kami menyediakan profil terperinci untuk setiap psikolog,
+            termasuk bidang keahlian, kualifikasi, dan ulasan pengguna. Luangkan
+            waktu untuk menjelajahi dan memilih psikolog yang paling sesuai
+            dengan preferensi dan kebutuhan kesehatan mental Anda. Jika Anda
+            masih ragu, tim dukungan kami juga siap membantu Anda dalam membuat
+            pilihan.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="call-to-action">
+      <h2 class="header">
+        Kesehatan Mental Anda Penting. Jangkau Kami, Pulihkan Keseimbangan,
+        <br />dan Raih Ketenangan Bersama Kami!
+      </h2>
+      <a href="#" class="button-primary">Buat Konsultasi</a>
+    </section>
+
+    <footer>
+      <br />
+      <br />
+      <div class="footer">
+        <a href="link">Tentang Kami</a>
+        <a href="link">Kontak</a>
+        <a href="link">Sertifikasi</a>
+        <a href="link">Media Sosial</a>
+      </div>
+      <div class="footerl">
+        <p>SayangMental 2024 - miawvics</p>
+        <a href="#">Kebijakan Privasi</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </footer>
     <!-- sampe sini avriel -->
+    <script src="app.js"></script>
   </body>
 </html>
